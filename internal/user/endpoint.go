@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/json"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 )
@@ -28,17 +29,17 @@ type (
 	}
 )
 
-func MakeEndpoints() Endpoints {
+func MakeEndpoints(s Service) Endpoints {
 	return Endpoints{
-		Create: makeCreateEndpoint(),
-		Get:    makeGetEndpoint(),
-		GetAll: makeGetAllEndpoint(),
-		Update: makeUpdateEndpoint(),
-		Delete: makeDeleteEndpoint(),
+		Create: makeCreateEndpoint(s),
+		Get:    makeGetEndpoint(s),
+		GetAll: makeGetAllEndpoint(s),
+		Update: makeUpdateEndpoint(s),
+		Delete: makeDeleteEndpoint(s),
 	}
 }
 
-func makeCreateEndpoint() Controller {
+func makeCreateEndpoint(s Service) Controller {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req CreateReq
 		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
@@ -56,28 +57,47 @@ func makeCreateEndpoint() Controller {
 			json.NewEncoder(w).Encode(ErrorRes{"Last Name is required"})
 			return
 		}
-		json.NewEncoder(w).Encode(req)
+		user, err := s.Create(req.FirstName, req.LastName, req.Email, req.Phone)
+		if err != nil {
+			w.WriteHeader(400)
+			json.NewEncoder(w).Encode(ErrorRes{err.Error()})
+			return
+		}
+		json.NewEncoder(w).Encode(user)
 	}
 }
-func makeGetEndpoint() Controller {
+func makeGetAllEndpoint(s Service) Controller {
 	return func(w http.ResponseWriter, r *http.Request) {
-		log.Println("Get User")
-		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
+		users, err := s.GetAll()
+		if err != nil {
+			w.WriteHeader(400)
+			json.NewEncoder(w).Encode(ErrorRes{err.Error()})
+			return
+		}
+
+		json.NewEncoder(w).Encode(users)
 	}
 }
-func makeGetAllEndpoint() Controller {
+func makeGetEndpoint(s Service) Controller {
 	return func(w http.ResponseWriter, r *http.Request) {
-		log.Println("GetAll User")
-		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
+		path := mux.Vars(r)
+		id := path["id"]
+		user, err := s.Get(id)
+		if err != nil {
+			w.WriteHeader(400)
+			json.NewEncoder(w).Encode(ErrorRes{"El usuario no existe"})
+			return
+		}
+		json.NewEncoder(w).Encode(user)
 	}
 }
-func makeUpdateEndpoint() Controller {
+func makeUpdateEndpoint(s Service) Controller {
 	return func(w http.ResponseWriter, r *http.Request) {
 		log.Println("Update User")
 		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
 	}
 }
-func makeDeleteEndpoint() Controller {
+func makeDeleteEndpoint(s Service) Controller {
 	return func(w http.ResponseWriter, r *http.Request) {
 		log.Println("Delete User")
 		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
