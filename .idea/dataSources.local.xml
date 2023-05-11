@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="GO-223.8836.34">
-    <data-source name="DBGO" uuid="1e256b91-3067-406f-b8e7-d1bcc06d4232">
+  <component name="dataSourceStorageLocal" created-in="GO-223.8836.56">
+    <data-source name="DBGO_Docker" uuid="1e256b91-3067-406f-b8e7-d1bcc06d4232">
       <database-info product="MySQL" version="5.7.41" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="5.7.41" exact-driver-version="8.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="DBGO_Debian" uuid="3549bc8b-09c9-4354-8a07-9172de37343c">
+      <database-info product="MySQL" version="5.5.5-10.5.18-MariaDB-0+deb11u1" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MARIADB" exact-version="10.5.18" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>

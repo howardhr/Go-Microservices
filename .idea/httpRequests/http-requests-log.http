@@ -1,0 +1,594 @@
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-05-05T222937.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-23T191551.200.txt
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+Content-Length: 129
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "first_name": "Maria Paola",
+  "last_name": "Hinestroza Robledo",
+  "email": "MariaPaolal@gmail.com",
+  "phone": "33333333"
+}
+
+<> 2023-04-23T191545.200.txt
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+Content-Length: 129
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "first_name": "Maria Paola",
+  "last_name": "Hinestroza Robledo",
+  "email": "MariaPaolal@gmail.com",
+  "phone": "33333333"
+}
+
+<> 2023-04-23T191543.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-23T191536.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-23T191503.200.txt
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+Content-Length: 129
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "first_name": "Maria Paola",
+  "last_name": "Hinestroza Robledo",
+  "email": "MariaPaolal@gmail.com",
+  "phone": "33333333"
+}
+
+<> 2023-04-23T191500.200.txt
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+Content-Length: 129
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "first_name": "Maria Paola",
+  "last_name": "Hinestroza Robledo",
+  "email": "MariaPaolal@gmail.com",
+  "phone": "33333333"
+}
+
+<> 2023-04-23T191458.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-23T191446.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-23T174318.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T214712.200.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T214512.200.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T214416.200.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T214412.200.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T214352.200.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T214330.400.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T214319.400.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T213721.400.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T213443.200.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 82
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date": "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T213028.400.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 81
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "start_date: "2020-01-01",
+  "end_date": "2024-01-01"
+
+}
+
+<> 2023-04-20T213012.400.txt
+
+###
+
+POST http://localhost:8000/courses
+Content-Type: application/json
+Content-Length: 78
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "name": "Quimica",
+  "last_name": "2020-01-01",
+  "email": "2024-01-01"
+
+}
+
+<> 2023-04-20T212633.400.txt
+
+###
+
+PATCH http://localhost:8000/users/
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202415.404.txt
+
+###
+
+PATCH http://localhost:8000/users
+Content-Type: application/json
+Content-Length: 129
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "first_name": "Maria Paola",
+  "last_name": "Hinestroza Robledo",
+  "email": "MariaPaolal@gmail.com",
+  "phone": "33333333"
+}
+
+###
+
+GET http://localhost:8000/users/10571eb2-2f50-4175-a7b0-601f3ae88275
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202414-2.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202414-1.200.txt
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+Content-Length: 129
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "first_name": "Maria Paola",
+  "last_name": "Hinestroza Robledo",
+  "email": "MariaPaolal@gmail.com",
+  "phone": "33333333"
+}
+
+<> 2023-04-20T202414.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202250.200.txt
+
+###
+
+GET http://localhost:8000/users/10571eb2-2f50-4175-a7b0-601f3ae88275
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202149.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202119.200.txt
+
+###
+
+GET http://localhost:8000/users/10571eb2-2f50-4175-a7b0-601f3ae88275
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202106.200.txt
+
+###
+
+GET http://localhost:8000/users/10571eb2-2f50-4175-a7b0-601f3ae88275
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202056.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202035.200.txt
+
+###
+
+GET http://localhost:8000/users
+Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-20T202021.200.txt
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+Content-Length: 37
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+<> 2023-04-20T201221.200.json
+
+###
+
+POST http://localhost:8000/users
+Content-Type: application/json
+Content-Length: 129
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "first_name": "Maria Paola",
+  "last_name": "Hinestroza Robledo",
+  "email": "MariaPaolal@gmail.com",
+  "phone": "33333333"
+}
+
+<> 2023-04-20T200945.200.txt
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+Content-Length: 106
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 1b879b9d-57ab-42ab-b2e3-e9faeac2bdca,
+  "price": 180,
+  "ts": 1682039264,
+  "value": "content"
+}
+
+<> 2023-04-20T200744.200.json
+
+###
+
+POST https://httpbin.org/post
+Content-Type: application/json
+Content-Length: 37
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+<> 2023-04-20T200730.200.json
+
+###
+
+GET http://localhost:8000/users
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-19T212446.200.txt
+
+###
+
+POST http://localhost:8000/users
+Accept: application/json
+{:
+	"first_name": "Maria Paola",
+	"last_name": "Hinestroza Robledo",
+	"email": "MariaPaolal@gmail.com",
+	"phone": "33333333"
+}:
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-19T212409.400.txt
+
+###
+
+POST http://localhost:8000/users
+Accept: application/json
+{:
+	"first_name": "Maria Paola",
+	"last_name": "Hinestroza Robledo",
+	"email": "MariaPaolal@gmail.com",
+	"phone": "33333333"
+}:
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-04-19T211325.400.txt
+
+###
+

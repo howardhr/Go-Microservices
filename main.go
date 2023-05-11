@@ -1,40 +1,44 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gorilla/mux"
+	"github.com/howardhr/Go-Microservices/internal/course"
 	"github.com/howardhr/Go-Microservices/internal/user"
+	"github.com/howardhr/Go-Microservices/pkg/bootstrap"
 	"github.com/joho/godotenv"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
 	"log"
 	"net/http"
-	"os"
 	"time"
 )
 
 func main() {
 	router := mux.NewRouter()
 	_ = godotenv.Load()
-	l := log.New(os.Stdout, "", log.LstdFlags|log.Lshortfile)
-	dsn := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",
-		os.Getenv("DATABASE_USER"),
-		os.Getenv("DATABASE_PASSWORD"),
-		os.Getenv("DATABASE_HOST"),
-		os.Getenv("DATABASE_PORT"),
-		os.Getenv("DATABASE_NAME"))
-
-	db, _ := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	db = db.Debug()
-	_ = db.AutoMigrate(&user.User{})
+	l := bootstrap.InitLoger()
+	db, err := bootstrap.DBConnection()
+	if err != nil {
+		l.Fatalln(err)
+	}
 	userRepo := user.NewRepo(l, db)
 	userSrv := user.NewService(l, userRepo)
 	userEnd := user.MakeEndpoints(userSrv)
+
+	courseRepo := course.NewRepo(db, l)
+	courseSrv := course.NewService(l, courseRepo)
+	courseEnd := course.MakeEndpoints(courseSrv)
+
 	router.HandleFunc("/users", userEnd.Create).Methods("POST")
 	router.HandleFunc("/users", userEnd.GetAll).Methods("GET")
 	router.HandleFunc("/users/{id}", userEnd.Get).Methods("GET")
 	router.HandleFunc("/users/{id}", userEnd.Update).Methods("PATCH")
 	router.HandleFunc("/users/{id}", userEnd.Delete).Methods("DELETE")
+
+	router.HandleFunc("/courses", courseEnd.Create).Methods("POST")
+	router.HandleFunc("/courses", courseEnd.GetAll).Methods("GET")
+	router.HandleFunc("/courses/{id}", courseEnd.Get).Methods("GET")
+	router.HandleFunc("/courses/{id}", courseEnd.Update).Methods("PATCH")
+	router.HandleFunc("/courses/{id}", courseEnd.Delete).Methods("DELETE")
+
 	srv := &http.Server{
 		//http.TimeoutHandler(router, 3*time.Second, "Timeout"),
 		Handler:      router,
@@ -43,9 +47,7 @@ func main() {
 		ReadTimeout:  5 * time.Second,
 	}
 	log.Println("Listening on..", "http://localhost:8080/")
-	err := srv.ListenAndServe()
-	if err != nil {
-		log.Fatal(err)
-	}
+
+	l.Fatalln(srv.ListenAndServe())
 
 }

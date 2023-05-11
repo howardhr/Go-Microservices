@@ -1,0 +1,1 @@
+{"status":400,"error":"Error 1146 (42S02): Table 'go_microservices.courses' doesn't exist"}

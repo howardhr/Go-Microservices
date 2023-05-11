@@ -1,0 +1,1 @@
+{"status":200,"data":[{"id":"6f0a13bf-5b14-440d-9956-b23284f3523a","first_name":"Jonh","last_name":"Andrade","email":"Jandrade@gmail.com","phone":"3090467564"},{"id":"a48a3075-0a49-489f-b1e2-f93dff2dfcb8","first_name":"Howard José","last_name":"Hinestroza Robledo","email":"HowardJosé@gmail.com","phone":"311111111"}],"meta":{"total_count":8,"page":1,"per_page":2,"page_count":4}}
