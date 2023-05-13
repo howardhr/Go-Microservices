@@ -2,8 +2,7 @@ package bootstrap
 
 import (
 	"fmt"
-	"github.com/howardhr/Go-Microservices/internal/course"
-	"github.com/howardhr/Go-Microservices/internal/user"
+	"github.com/howardhr/Go-Microservices/internal/domain"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
@@ -28,13 +27,19 @@ func DBConnection() (*gorm.DB, error) {
 	}
 
 	if os.Getenv("DATABASE_DEBUG") == "true" {
-		if err := db.AutoMigrate(&user.User{}); err != nil {
+		if err := db.AutoMigrate(&domain.User{}); err != nil {
 			return nil, err
 		}
 	}
 
 	if os.Getenv("DATABASE_DEBUG") == "true" {
-		if err := db.AutoMigrate(&course.Course{}); err != nil {
+		if err := db.AutoMigrate(&domain.Course{}); err != nil {
+			return nil, err
+		}
+	}
+
+	if os.Getenv("DATABASE_DEBUG") == "true" {
+		if err := db.AutoMigrate(&domain.Enrrolmet{}); err != nil {
 			return nil, err
 		}
 	}

@@ -1,12 +1,15 @@
 package user
 
-import "log"
+import (
+	"github.com/howardhr/Go-Microservices/internal/domain"
+	"log"
+)
 
 type (
 	Service interface {
-		Create(firstName, lastNAme, email, phone string) (*User, error)
-		Get(id string) (*User, error)
-		GetAll(filters Filters, offset, limit int) ([]User, error)
+		Create(firstName, lastNAme, email, phone string) (*domain.User, error)
+		Get(id string) (*domain.User, error)
+		GetAll(filters Filters, offset, limit int) ([]domain.User, error)
 		Delete(id string) error
 		Update(id string, firstName *string, lastName *string, email *string, phone *string) error
 		Count(filters Filters) (int, error)
@@ -28,9 +31,9 @@ func NewService(log *log.Logger, repo Repository) Service {
 	}
 }
 
-func (s service) Create(firstName, lastName, email, phone string) (*User, error) {
+func (s service) Create(firstName, lastName, email, phone string) (*domain.User, error) {
 	s.log.Println("Create user service")
-	user := User{
+	user := domain.User{
 		FirstName: firstName,
 		LastName:  lastName,
 		Email:     email,
@@ -42,14 +45,14 @@ func (s service) Create(firstName, lastName, email, phone string) (*User, error)
 	return &user, nil
 }
 
-func (s service) GetAll(filters Filters, offset, limit int) ([]User, error) {
+func (s service) GetAll(filters Filters, offset, limit int) ([]domain.User, error) {
 	users, err := s.repo.GetAll(filters, offset, limit)
 	if err != nil {
 		return nil, err
 	}
 	return users, nil
 }
-func (s service) Get(id string) (*User, error) {
+func (s service) Get(id string) (*domain.User, error) {
 	user, err := s.repo.Get(id)
 	if err != nil {
 		return nil, err

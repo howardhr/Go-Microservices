@@ -1,4 +1,4 @@
-package course
+package domain
 
 import (
 	"github.com/google/uuid"
@@ -11,6 +11,7 @@ type Course struct {
 	Name      string         `json:"name" gorm:"type:char(50);not null"`
 	StartDate time.Time      `json:"start_date"`
 	EndDate   time.Time      `json:"end_date"`
+	User      *User          `gorm:"-"`
 	CreatedAt *time.Time     `json:"-"`
 	UpdatedAt time.Time      `json:"-"`
 	Deleted   gorm.DeletedAt `json:"-"`

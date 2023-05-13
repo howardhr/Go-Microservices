@@ -176,6 +176,7 @@ func makeDeleteEndpoint(s Service) Controller {
 			json.NewEncoder(w).Encode(map[string]bool{"ok": true})
 			return
 		}
+
 		json.NewEncoder(w).Encode(map[string]string{"ok": "success"})
 	}
 

@@ -805,93 +805,192 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <table id="234" parent="224" name="users">
+    <table id="234" parent="224" name="enrrolmets">
       <Engine>InnoDB</Engine>
       <CollationName>latin1_swedish_ci</CollationName>
     </table>
-    <column id="235" parent="233" name="id">
+    <table id="235" parent="224" name="products">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <table id="236" parent="224" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>latin1_swedish_ci</CollationName>
+    </table>
+    <column id="237" parent="233" name="id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="236" parent="233" name="name">
+    <column id="238" parent="233" name="name">
       <DasType>char(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="237" parent="233" name="start_date">
+    <column id="239" parent="233" name="start_date">
       <DasType>datetime(3)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="238" parent="233" name="end_date">
+    <column id="240" parent="233" name="end_date">
       <DasType>datetime(3)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="239" parent="233" name="created_at">
+    <column id="241" parent="233" name="created_at">
       <DasType>datetime(3)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="240" parent="233" name="updated_at">
+    <column id="242" parent="233" name="updated_at">
       <DasType>datetime(3)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="241" parent="233" name="deleted">
+    <column id="243" parent="233" name="deleted">
       <DasType>datetime(3)|0s</DasType>
       <Position>7</Position>
     </column>
-    <index id="242" parent="233" name="PRIMARY">
+    <index id="244" parent="233" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="243" parent="233" name="PRIMARY">
+    <key id="245" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="244" parent="234" name="id">
+    <column id="246" parent="234" name="id">
       <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="245" parent="234" name="first_name">
-      <DasType>char(50)|0s</DasType>
+    <column id="247" parent="234" name="user_id">
+      <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="246" parent="234" name="last_name">
-      <DasType>char(50)|0s</DasType>
+    <column id="248" parent="234" name="course_id">
+      <DasType>char(36)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="247" parent="234" name="email">
+    <column id="249" parent="234" name="status">
       <DasType>char(50)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="248" parent="234" name="phone">
-      <DasType>char(30)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="250" parent="234" name="created_at">
+      <DasType>datetime(3)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="249" parent="234" name="created_at">
-      <DasType>longtext|0s</DasType>
+    <column id="251" parent="234" name="updated_at">
+      <DasType>datetime(3)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="250" parent="234" name="updated_at">
-      <DasType>longtext|0s</DasType>
-      <Position>7</Position>
-    </column>
-    <column id="251" parent="234" name="deleted">
-      <DasType>datetime(3)|0s</DasType>
-      <Position>8</Position>
-    </column>
-    <index id="252" parent="234" name="PRIMARY">
+    <foreign-key id="252" parent="234" name="fk_enrrolmets_user">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="253" parent="234" name="fk_enrrolmets_course">
+      <ColNames>course_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>courses</RefTableName>
+    </foreign-key>
+    <index id="254" parent="234" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="253" parent="234" name="PRIMARY">
+    <index id="255" parent="234" name="fk_enrrolmets_user">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="256" parent="234" name="fk_enrrolmets_course">
+      <ColNames>course_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="257" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="258" parent="235" name="id">
+      <DasType>char(36)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="259" parent="235" name="name">
+      <DasType>char(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="260" parent="235" name="price">
+      <DasType>double|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="261" parent="235" name="create_at">
+      <DasType>datetime(3)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="262" parent="235" name="update_at">
+      <DasType>datetime(3)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="263" parent="235" name="deleted">
+      <DasType>datetime(3)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <index id="264" parent="235" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="265" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="266" parent="236" name="id">
+      <DasType>char(36)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="267" parent="236" name="first_name">
+      <DasType>char(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="268" parent="236" name="last_name">
+      <DasType>char(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="269" parent="236" name="email">
+      <DasType>char(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="270" parent="236" name="phone">
+      <DasType>char(30)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="271" parent="236" name="created_at">
+      <DasType>longtext|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="272" parent="236" name="updated_at">
+      <DasType>longtext|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="273" parent="236" name="deleted">
+      <DasType>datetime(3)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <index id="274" parent="236" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="275" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

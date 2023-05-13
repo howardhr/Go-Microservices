@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/howardhr/Go-Microservices/pkg/meta"
 	"net/http"
@@ -117,6 +118,7 @@ func makeGetEndpoint(s Service) Controller {
 	return func(w http.ResponseWriter, r *http.Request) {
 		path := mux.Vars(r)
 		id := path["id"]
+		fmt.Println("id que envia", id)
 		user, err := s.Get(id)
 		if err != nil {
 			w.WriteHeader(400)

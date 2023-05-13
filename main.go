@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gorilla/mux"
 	"github.com/howardhr/Go-Microservices/internal/course"
+	"github.com/howardhr/Go-Microservices/internal/enrrolment"
 	"github.com/howardhr/Go-Microservices/internal/user"
 	"github.com/howardhr/Go-Microservices/pkg/bootstrap"
 	"github.com/joho/godotenv"
@@ -27,6 +28,10 @@ func main() {
 	courseSrv := course.NewService(l, courseRepo)
 	courseEnd := course.MakeEndpoints(courseSrv)
 
+	enrollRepo := enrrolment.NewRepo(db, l)
+	enrollSrv := enrrolment.NewService(l, userSrv, courseSrv, enrollRepo)
+	enrollEnd := enrrolment.MakeEndpoints(enrollSrv)
+
 	router.HandleFunc("/users", userEnd.Create).Methods("POST")
 	router.HandleFunc("/users", userEnd.GetAll).Methods("GET")
 	router.HandleFunc("/users/{id}", userEnd.Get).Methods("GET")
@@ -38,6 +43,8 @@ func main() {
 	router.HandleFunc("/courses/{id}", courseEnd.Get).Methods("GET")
 	router.HandleFunc("/courses/{id}", courseEnd.Update).Methods("PATCH")
 	router.HandleFunc("/courses/{id}", courseEnd.Delete).Methods("DELETE")
+
+	router.HandleFunc("/enrrol", enrollEnd.Create).Methods("POST")
 
 	srv := &http.Server{
 		//http.TimeoutHandler(router, 3*time.Second, "Timeout"),

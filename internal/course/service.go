@@ -1,15 +1,16 @@
 package course
 
 import (
+	"github.com/howardhr/Go-Microservices/internal/domain"
 	"log"
 	"time"
 )
 
 type (
 	Service interface {
-		Create(Name, StartDate, EndDate string) (*Course, error)
-		GetAll(filters Filters, offset, limit int) ([]Course, error)
-		Get(id string) (*Course, error)
+		Create(Name, StartDate, EndDate string) (*domain.Course, error)
+		GetAll(filters Filters, offset, limit int) ([]domain.Course, error)
+		Get(id string) (*domain.Course, error)
 		Update(id string, name *string, startDate, endDate *string) error
 		Delete(id string) error
 		Count(filters Filters) (int, error)
@@ -30,7 +31,7 @@ func NewService(log *log.Logger, repo Repository) Service {
 	}
 }
 
-func (s service) Create(name, startDate, endDate string) (*Course, error) {
+func (s service) Create(name, startDate, endDate string) (*domain.Course, error) {
 
 	startDateParsed, err := time.Parse("2006-01-02", startDate)
 	if err != nil {
@@ -44,7 +45,7 @@ func (s service) Create(name, startDate, endDate string) (*Course, error) {
 		return nil, err
 	}
 
-	course := &Course{
+	course := &domain.Course{
 		Name:      name,
 		StartDate: startDateParsed,
 		EndDate:   endDateParsed,
@@ -57,7 +58,7 @@ func (s service) Create(name, startDate, endDate string) (*Course, error) {
 
 	return course, nil
 }
-func (s service) GetAll(filters Filters, offset, limit int) ([]Course, error) {
+func (s service) GetAll(filters Filters, offset, limit int) ([]domain.Course, error) {
 	users, err := s.repo.GetAll(filters, offset, limit)
 	if err != nil {
 		return nil, err
@@ -65,7 +66,7 @@ func (s service) GetAll(filters Filters, offset, limit int) ([]Course, error) {
 	return users, nil
 }
 
-func (s service) Get(id string) (*Course, error) {
+func (s service) Get(id string) (*domain.Course, error) {
 	course, err := s.repo.Get(id)
 	if err != nil {
 		return nil, err
